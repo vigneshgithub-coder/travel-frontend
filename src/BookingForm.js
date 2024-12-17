@@ -30,7 +30,7 @@ const BookingForm = () => {
     }
     try {
       console.log('Submitting form data:', formData); // Debugging
-      const response = await axios.post('https://travel-backend-8.onrender.com/api/generate-invoice', bookingData);
+      const response = await axios.post('https://travel-backend-8.onrender.com/api/generate-invoice', formData);
       console.log('Invoice generated successfully:', response.data);
       // Optionally, handle the response, like showing a success message or redirecting the user
       alert('Booking successful!');
@@ -38,7 +38,7 @@ const BookingForm = () => {
       console.error('Error submitting booking:', error);
       alert('Failed to submit booking. Please try again.');
     }
-    alert('Booking successful!');
+    
 
     // After booking is successful, generate the invoice
     const invoiceResponse = await axios.post('http://localhost:5000/api/generate-invoice', {
