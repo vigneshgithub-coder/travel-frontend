@@ -8,15 +8,11 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 const App = () => {
   const [packages, setPackages] = useState([]);
-  // const api = axios.create({
-  //   baseURL: 'https://travel-backend-8.onrender.com/api', // Make sure this URL is correct
-  // });
-  
 
   // Fetch data from backend
   useEffect(() => {
     axios
-      .get('https://travel-backend-8.onrender.com/api/packages/')
+      .get('http://localhost:5000/api/packages')
       .then((response) => setPackages(response.data))
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
@@ -38,7 +34,7 @@ const App = () => {
                       
                       <img src={pkg.image} alt={pkg.name} className="package-image" /> {/* Displaying image */}
                       <p>{pkg.description}</p>
-                      <p>Price: Rs{pkg.price}</p> {/* Displaying price */}
+                      <p>Price: {pkg.price}</p> {/* Displaying price */}
                       <Link
                         to={`/book/${pkg._id}`}
                         state={{ packageDetails: pkg }} // Pass package data via state
