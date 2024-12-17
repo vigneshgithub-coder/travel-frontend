@@ -16,7 +16,7 @@ const App = () => {
   // Fetch data from backend
   useEffect(() => {
     axios
-      .get('https://travel-backend-8.onrender.com/')
+      .get('https://travel-backend-8.onrender.com/api/packages/')
       .then((response) => setPackages(response.data))
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
