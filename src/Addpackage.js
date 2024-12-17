@@ -18,7 +18,7 @@ const AddPackage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/packages', {
+      const response = await axios.post('https://travel-backend-10.onrender.com/api/packages', {
         ...formData,
         availableDates: formData.availableDates.split(',') // Convert string to array
       });
