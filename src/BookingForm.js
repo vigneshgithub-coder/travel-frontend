@@ -30,10 +30,9 @@ const BookingForm = () => {
     }
     try {
       console.log('Submitting form data:', formData); // Debugging
-      await axios.post('http://localhost:5000/api/bookings', {
-        ...formData,
-        packageId: packageDetails._id, // Include the package ID
-      });
+      const response = await axios.post('https://travel-backend-8.onrender.com/api/generate-invoice', bookingData);
+      console.log('Invoice generated successfully:', response.data);
+      // Optionally, handle the response, like showing a success message or redirecting the user
       alert('Booking successful!');
     } catch (error) {
       console.error('Error submitting booking:', error);
