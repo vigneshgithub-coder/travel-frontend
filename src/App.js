@@ -8,9 +8,9 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 const App = () => {
   const [packages, setPackages] = useState([]);
-  const api = axios.create({
-    baseURL: 'https://travel-backend-8.onrender.com/api', // Make sure this URL is correct
-  });
+  // const api = axios.create({
+  //   baseURL: 'https://travel-backend-8.onrender.com/api', // Make sure this URL is correct
+  // });
   
 
   // Fetch data from backend
