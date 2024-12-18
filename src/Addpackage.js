@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const AddPackage = () => {
   const [formData, setFormData] = useState({
-    title: '',
+    name: '',
     description: '',
     price: '',
     availableDates: '',
@@ -17,17 +17,29 @@ const AddPackage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+      // Log the form data to the console
+  console.log('Form Data:', formData);
     try {
-      const response = await axios.post('https://travel-backend-10.onrender.com/api/packages', {
+      const response = await axios.post('http://localhost:5000/api/packages', {
         ...formData,
         availableDates: formData.availableDates.split(',') // Convert string to array
+        
       });
       console.log('Package added successfully:', response.data);
       setFormData({ title: '', description: '', price: '', availableDates: '', image: '' }); // Reset form
     } catch (error) {
-      console.error('Error adding package:', error);
+    if (error.response) {
+      // Server responded with a status code outside the 2xx range
+      console.error(`Error: ${error.response.status} - ${error.response.data.message || error.response.statusText}`);
+    } else if (error.request) {
+      // No response received
+      console.error('No response received from server');
+    } else {
+      // Error setting up the request
+      console.error(`Request setup error: ${error.message}`);
     }
-  };
+  }
+};
 
   return (
     <form onSubmit={handleSubmit}>

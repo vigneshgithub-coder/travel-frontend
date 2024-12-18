@@ -9,7 +9,7 @@ const PackageList = () => {
   useEffect(() => {
     const fetchPackages = async () => {
       try {
-        const response = await axios.get('https://travel-backend-10.onrender.com/api/packages');
+        const response = await axios.get('http://localhost:5000/api/packages');
         setPackages(response.data);
       } catch (error) {
         console.error('Error fetching packages:', error);
