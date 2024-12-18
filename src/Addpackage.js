@@ -20,7 +20,7 @@ const AddPackage = () => {
       // Log the form data to the console
   console.log('Form Data:', formData);
     try {
-      const response = await axios.post('http://localhost:5000/api/packages', {
+      const response = await axios.post('https://travel-backend-8.onrender.com/api/packages', {
         ...formData,
         availableDates: formData.availableDates.split(',') // Convert string to array
         
