@@ -30,10 +30,11 @@ const BookingForm = () => {
     }
     try {
       console.log('Submitting form data:', formData); // Debugging
-      const response = await axios.post('https://travel-backend-8.onrender.com/api/generate-invoice', formData);
+      const response = await axios.post('http://localhost:5000/api/bookings', formData);
       console.log('Invoice generated successfully:', response.data);
       // Optionally, handle the response, like showing a success message or redirecting the user
       alert('Booking successful!');
+      window.location.reload();
     } catch (error) {
       console.error('Error submitting booking:', error);
       alert('Failed to submit booking. Please try again.');
@@ -41,7 +42,7 @@ const BookingForm = () => {
     
 
     // After booking is successful, generate the invoice
-    const invoiceResponse = await axios.post('https://travel-backend-8.onrender.com/api/generate-invoice', {
+    const invoiceResponse = await axios.post('http://localhost:5000/api/generate-invoice', {
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
@@ -57,14 +58,10 @@ const BookingForm = () => {
     const blob = new Blob([invoiceResponse.data], { type: 'application/pdf' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = `${formData.name}_invoice.pdf`;
+    link.download = `${formData.name}_invoices.pdf`;
     link.click();
 
-  //   // Optionally, you can redirect the user to a success page or booking page
-  //   navigate('/');
-  // } catch (error) {
-  //   console.error('Error submitting booking:', error);
-  //   alert('Failed to submit booking. Please try again.');
+  alert('Failed to submit booking. Please try again.');
   // }
 //};
     

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+//import { title } from 'process';
 
 const AddPackage = () => {
   const [formData, setFormData] = useState({
@@ -20,13 +21,14 @@ const AddPackage = () => {
       // Log the form data to the console
   console.log('Form Data:', formData);
     try {
-      const response = await axios.post('https://travel-backend-8.onrender.com/api/packages', {
+      const response = await axios.post('http://localhost:5000/api/packages', {
         ...formData,
         availableDates: formData.availableDates.split(',') // Convert string to array
         
       });
       console.log('Package added successfully:', response.data);
-      setFormData({ title: '', description: '', price: '', availableDates: '', image: '' }); // Reset form
+      setFormData({ name: '', description: '', price: '', availableDates: '', image: '' }); // Reset form
+      window.location.reload();
     } catch (error) {
     if (error.response) {
       // Server responded with a status code outside the 2xx range
@@ -45,7 +47,7 @@ const AddPackage = () => {
     <form onSubmit={handleSubmit}>
       <div>
         <label>Title:</label>
-        <input type="text" name="title" value={formData.title} onChange={handleChange} required />
+        <input type="text" name="name" value={formData.title} onChange={handleChange} required />
       </div>
       <div>
         <label>Description:</label>
