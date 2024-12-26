@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# Travel Agency Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a full-stack travel agency web application designed to manage tour packages and bookings. It features a responsive frontend built with React.js and a backend powered by Node.js, Express, and MongoDB.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Table of Contents
+- [Project Description](#project-description)
+- [Features](#features)
+- [Folder Structure](#folder-structure)
+- [Setup Instructions](#setup-instructions)
+- [Environment Variables](#environment-variables)
+- [API Endpoints](#api-endpoints)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Description
+This application allows users to browse and book travel packages. Admins can manage packages, view bookings, and update package details through a dedicated admin panel. The system integrates invoice generation and email notifications.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Features
+- **Tour Packages Page** – Displays packages fetched from MongoDB.
+- **Package Booking** – Form submission with invoice generation.
+- **Admin Panel** – Manage tour packages and bookings.
+- **Responsive Design** – Fully responsive for mobile and desktop.
+- **Authentication** – Basic admin authentication for secure access.
+- **Search & Filter** – (Optional) Search and filter packages by price, location, etc.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Folder Structure
+```
+/project-root
+│
+├── client                   # Frontend React Application
+│   ├── public
+│   └── src
+│       ├── components       # Reusable Components
+│       ├── pages            # Page Components (Home, Booking)
+│       └── services         # API Calls
+│
+├── server                   # Backend Node.js/Express API
+│   ├── config               # Configuration Files
+│   ├── controllers          # Route Handlers
+│   ├── models               # Mongoose Models
+│   └── routes               # API Routes
+│
+└── README.md
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Setup Instructions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
+- Node.js (v18+)
+- MongoDB (v5+)
+- Git
+- NPM or Yarn
 
-### `npm run eject`
+### 1. Clone the Repository
+```bash
+git clone https://github.com/username/repo-name.git
+cd repo-name
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 2. Install Dependencies
+**Frontend**
+```bash
+cd client
+npm install
+```
+**Backend**
+```bash
+cd server
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 3. Set Up Environment Variables
+Create a `.env` file in the `server` folder and add the following:
+```
+MONGO_URI=mongodb://localhost:27017/travelDB
+JWT_SECRET=your_jwt_secret
+PORT=5000
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 4. Run the Application
+**Backend**
+```bash
+cd server
+npm start
+```
+**Frontend**
+```bash
+cd client
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Access the application at `http://localhost:3000`
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## API Endpoints
+- **GET /api/packages** – Fetch all packages
+- **POST /api/bookings** – Create a new booking
+- **PUT /api/packages/:id** – Update package (Admin)
+- **DELETE /api/packages/:id** – Delete package (Admin)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## License
+[MIT](https://opensource.org/licenses/MIT)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
