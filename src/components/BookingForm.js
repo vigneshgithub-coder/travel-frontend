@@ -34,7 +34,7 @@ const BookingForm = () => {
       console.log('Invoice generated successfully:', response.data);
       // Optionally, handle the response, like showing a success message or redirecting the user
       alert('Booking successful!');
-      window.location.reload();
+      // window.location.reload();
     } catch (error) {
       console.error('Error submitting booking:', error);
       alert('Failed to submit booking. Please try again.');

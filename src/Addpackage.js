@@ -28,7 +28,7 @@ const AddPackage = () => {
       });
       console.log('Package added successfully:', response.data);
       setFormData({ name: '', description: '', price: '', availableDates: '', image: '' }); // Reset form
-      window.location.reload();
+      // window.location.reload();
     } catch (error) {
     if (error.response) {
       // Server responded with a status code outside the 2xx range
