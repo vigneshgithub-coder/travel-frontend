@@ -413,3 +413,57 @@ p {
   margin-top: 10px;
   text-align: center;
 }
+/* Admin Login Page */
+.admin-login-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ecf0f1;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-login-container h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.admin-login-container input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+.admin-login-container input:focus {
+  outline: none;
+  border-color: #2980b9;
+}
+
+.admin-login-container button {
+  padding: 12px 20px;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.admin-login-container button:hover {
+  background-color: #c0392b;
+}
+
+.admin-login-container p {
+  text-align: center;
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
