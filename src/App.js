@@ -58,7 +58,7 @@ const App = () => {
               <ul className="package-list">
                 {packages.map((pkg) => (
                   <li key={pkg._id} className="package-item">
-                    <h2>{pkg.title}</h2>
+                    <h2>{pkg.name}</h2>
                     <img src={pkg.image} alt={pkg.name} className="package-image" />
                     <p>{pkg.description}</p>
                     <p>Price: {pkg.price}</p>
