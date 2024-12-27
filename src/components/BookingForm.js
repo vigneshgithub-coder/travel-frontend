@@ -61,7 +61,7 @@ const BookingForm = () => {
     link.download = `${formData.name}_invoices.pdf`;
     link.click();
 
-  alert('Failed to submit booking. Please try again.');
+  //alert('Failed to submit booking. Please try again.');
   // }
 //};
     
