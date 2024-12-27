@@ -37,7 +37,7 @@ const BookingForm = () => {
       // window.location.reload();
     } catch (error) {
       console.error('Error submitting booking:', error);
-      alert('Failed to submit booking. Please try again.');
+      //alert('Failed to submit booking. Please try again.');
     }
     
 

@@ -272,14 +272,6 @@ h1 {
   background-color: #c0392b;
 }
 /* Admin Login Container */
-.login-container {
-  max-width: 100px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #ecf0f1;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
 
 h2 {
   text-align: center;
@@ -414,56 +406,64 @@ p {
   text-align: center;
 }
 /* Admin Login Page */
-.admin-login-container {
+.login-container {
+  width: 350px;
+  margin: 100px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+form {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #ecf0f1;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.admin-login-container h2 {
-  text-align: center;
-  color: #2c3e50;
-  margin-bottom: 20px;
+label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #444;
 }
 
-.admin-login-container input {
-  margin-bottom: 15px;
+input {
   padding: 10px;
+  margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 1rem;
-  background-color: #fff;
+  font-size: 14px;
 }
 
-.admin-login-container input:focus {
+input:focus {
+  border-color: #666;
   outline: none;
-  border-color: #2980b9;
 }
 
-.admin-login-container button {
-  padding: 12px 20px;
-  background-color: #e74c3c;
+button {
+  padding: 12px;
+  background-color: #333;
   color: #fff;
   border: none;
   border-radius: 5px;
-  font-size: 1.2rem;
+  font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 20px;
 }
 
-.admin-login-container button:hover {
-  background-color: #c0392b;
+button:hover {
+  background-color: #555;
 }
 
-.admin-login-container p {
+p {
   text-align: center;
-  color: red;
-  font-size: 0.9rem;
-  margin-top: 10px;
+  margin-top: -10px;
+  font-size: 14px;
 }
+
